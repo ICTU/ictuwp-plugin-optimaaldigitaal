@@ -1,0 +1,318 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: ICTU / WP / GC Optimaal Digitaal\n"
+"POT-Creation-Date: 2020-06-03 13:35+0200\n"
+"PO-Revision-Date: 2020-06-03 13:09+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: ictuwp-plugin-optimaaldigitaal.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: ictuwp-plugin-optimaaldigitaal.php:105
+#: ictuwp-plugin-optimaaldigitaal.php:107
+msgid "Tips (ONVERTAALD)"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:106
+msgid "Tip (ONVERTAALD)"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:108
+msgid "Alle tips"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:109
+msgid "Toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:110
+msgid "Tip toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:111
+msgid "Tip bewerken"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:112
+msgid "Bewerk tip"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:113
+msgid "Nieuwe tip"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:114
+msgid "Bekijk"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:115
+msgid "Bekijk tip"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:116
+msgid "Tips zoeken"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:117
+msgid "Geen tips gevonden"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:118
+msgid "Geen tips in de prullenbak"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:123
+msgid "Hier voer je de tips in."
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:131
+msgid "post"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:145
+#: ictuwp-plugin-optimaaldigitaal.php:146
+#: ictuwp-plugin-optimaaldigitaal.php:147
+#: ictuwp-plugin-optimaaldigitaal.php:165
+msgid "Tip-thema's"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:148
+msgid "Alle tip-thema's"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:149
+msgid "Bewerk thema"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:150
+msgid "Bekijk thema"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:151
+msgid "thema bijwerken"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:152
+msgid "thema toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:153
+msgid "Nieuwe thema"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:154
+msgid "Zoek thema"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:155
+msgid "Meest gebruikte thema's"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:156
+#: ictuwp-plugin-optimaaldigitaal.php:187
+#: ictuwp-plugin-optimaaldigitaal.php:218
+msgid "Scheid met komma's"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:157
+msgid "thema toevoegen of verwijderen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:158
+#: ictuwp-plugin-optimaaldigitaal.php:189
+#: ictuwp-plugin-optimaaldigitaal.php:220
+msgid "Kies uit de meest gebruikte"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:159
+#: ictuwp-plugin-optimaaldigitaal.php:190
+#: ictuwp-plugin-optimaaldigitaal.php:221
+msgid "Niet gevonden"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:176
+#: ictuwp-plugin-optimaaldigitaal.php:177
+#: ictuwp-plugin-optimaaldigitaal.php:178
+#: ictuwp-plugin-optimaaldigitaal.php:196
+msgid "Jouw vraag"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:179
+msgid "Alle vragen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:180
+msgid "Bewerk vraag"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:181
+msgid "Bekijk vraag"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:182
+msgid "vraag bijwerken"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:183
+msgid "vraag toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:184
+msgid "Nieuwe vraag"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:185
+msgid "Zoek vraag"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:186
+msgid "Meest gebruikte vragen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:188
+msgid "vraag toevoegen of verwijderen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:207
+#: ictuwp-plugin-optimaaldigitaal.php:208
+#: ictuwp-plugin-optimaaldigitaal.php:209
+msgid "Jouw organisatie"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:210
+msgid "Alle organisaties"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:211
+msgid "Bewerk organisatie"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:212
+msgid "Bekijk organisatie"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:213
+msgid "organisatie bijwerken"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:214
+msgid "organisatie toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:215
+msgid "Nieuwe organisatie"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:216
+msgid "Zoek organisatie"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:217
+msgid "Meest gebruikte organisaties"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:219
+msgid "organisatie toevoegen of verwijderen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:238
+#: ictuwp-plugin-optimaaldigitaal.php:243
+#: ictuwp-plugin-optimaaldigitaal.php:245
+#: ictuwp-plugin-optimaaldigitaal.php:261
+#: ictuwp-plugin-optimaaldigitaal.php:265
+msgid "Tipgevers"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:239
+#: ictuwp-plugin-optimaaldigitaal.php:244
+msgid "Tipgever"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:246
+msgid "Alle tipgevers"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:247
+msgid "Nieuwe tipgever toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:248
+msgid "Voeg nieuwe tipgever toe"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:249
+msgid "Bewerk tipgever"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:250
+msgid "Nieuwe tipgever"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:251
+msgid "Bekijk tipgever"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:252
+msgid "Zoek tipgever"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:253
+msgid "Geen tipgever gevonden"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:254
+msgid "Geen tipgever gevonden in de prullenbak"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:255
+msgid "Uitgelichte afbeelding"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:256
+msgid "Overzichten"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:257
+msgid "Bijbehorende bestanden"
+msgstr ""
+
+#: ictuwp-plugin-optimaaldigitaal.php:1020
+msgid "Geen linkbeschrijving ingevoerd"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "ICTU / WP / GC Optimaal Digitaal"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://github.com/ICTU/Digitale-Overheid---WordPress-Custom-Post-Types-"
+"and-Taxonomies"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Plugin for optimaaldigitaal.gebruikercentraal.nl to register custom post "
+"types and custom taxonomies"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Paul van Buuren"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://wbvb.nl/"
+msgstr ""
