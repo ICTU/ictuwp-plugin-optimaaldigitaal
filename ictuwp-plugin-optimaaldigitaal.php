@@ -902,7 +902,9 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 					'description'           => '',
 				) );
 
-
+/*
+ * 
+ * andere opzet voor kleur en icoon
 				acf_add_local_field_group( array(
 					'key'                   => 'group_56656a2421879',
 					'title'                 => 'Layout van titel-thema\'s',
@@ -980,6 +982,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 					'active'                => 1,
 					'description'           => '',
 				) );
+ */
 
 
 				acf_add_local_field_group( array(
