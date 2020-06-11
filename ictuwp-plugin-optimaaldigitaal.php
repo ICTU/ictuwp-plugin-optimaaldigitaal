@@ -168,6 +168,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				"label"             => __( "Tip-thema's", "ictuwp-plugin-optimaaldigitaal" ),
 				"show_ui"           => true,
 				"query_var"         => true,
+				'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
 				"rewrite"           => array( 'slug' => GC_TIPTHEMA, 'with_front' => true ),
 				"show_admin_column" => false,
 			);
@@ -199,42 +200,12 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				"label"             => __( "Jouw vraag", "ictuwp-plugin-optimaaldigitaal" ),
 				"show_ui"           => true,
 				"query_var"         => true,
+				'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
 				"rewrite"           => array( 'slug' => GC_TIPVRAAG, 'with_front' => true ),
 				"show_admin_column" => false,
 			);
 			register_taxonomy( GC_TIPVRAAG, array( GC_TIP_CPT ), $args );
 
-			//------------------------------------------------------------------------------------------------------
-/*
-			$labels = array(
-				"name"                       => __( "Jouw organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"label"                      => __( "Jouw organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"menu_name"                  => __( "Jouw organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"all_items"                  => __( "Alle organisaties", "ictuwp-plugin-optimaaldigitaal" ),
-				"edit_item"                  => __( "Bewerk organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"view_item"                  => __( "Bekijk organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"update_item"                => __( "organisatie bijwerken", "ictuwp-plugin-optimaaldigitaal" ),
-				"add_new_item"               => __( "organisatie toevoegen", "ictuwp-plugin-optimaaldigitaal" ),
-				"new_item_name"              => __( "Nieuwe organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"search_items"               => __( "Zoek organisatie", "ictuwp-plugin-optimaaldigitaal" ),
-				"popular_items"              => __( "Meest gebruikte organisaties", "ictuwp-plugin-optimaaldigitaal" ),
-				"separate_items_with_commas" => __( "Scheid met komma's", "ictuwp-plugin-optimaaldigitaal" ),
-				"add_or_remove_items"        => __( "organisatie toevoegen of verwijderen", "ictuwp-plugin-optimaaldigitaal" ),
-				"choose_from_most_used"      => __( "Kies uit de meest gebruikte", "ictuwp-plugin-optimaaldigitaal" ),
-				"not_found"                  => __( "Niet gevonden", "ictuwp-plugin-optimaaldigitaal" ),
-			);
-
-			$args = array(
-				"labels"            => $labels,
-				"hierarchical"      => true,
-				"label"             => "Jouw organisatie",
-				"show_ui"           => true,
-				"query_var"         => true,
-				"rewrite"           => array( 'slug' => GC_TIPORGANISATIE, 'with_front' => true ),
-				"show_admin_column" => false,
-			);
-			register_taxonomy( GC_TIPORGANISATIE, array( GC_TIP_CPT ), $args );
-*/
 			//------------------------------------------------------------------------------------------------------
 
 			$labels = array(
@@ -270,9 +241,9 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				"show_in_menu"       => true,
 				"show_in_nav_menus"  => true,
 				"query_var"          => true,
+				'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
 				"rewrite"            => array( 'slug' => OD_CITAATAUTEUR, 'with_front' => true, ),
 				"show_admin_column"  => false,
-				"show_in_rest"       => false,
 				"rest_base"          => "",
 				"show_in_quick_edit" => false,
 			);
