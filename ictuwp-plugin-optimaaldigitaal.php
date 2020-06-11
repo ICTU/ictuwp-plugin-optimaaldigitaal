@@ -1651,6 +1651,60 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				) );
 
 
+					acf_add_local_field_group(array(
+						'key' => 'group_5ee25849d572e',
+						'title' => 'Kleur & icoon tipthema',
+						'fields' => array(
+							array(
+								'key' => 'field_5ee2591580057',
+								'label' => 'kleur en icoon tipthema',
+								'name' => 'kleur_en_icoon_tipthema',
+								'type' => 'radio',
+								'instructions' => '',
+								'required' => 1,
+								'conditional_logic' => 0,
+								'wrapper' => array(
+									'width' => '',
+									'class' => '',
+									'id' => '',
+								),
+								'choices' => array(
+									'gebruiksgemak' => '<img src="' . plugin_dir_url( __FILE__ ).'images/gebruiksgemak.jpg" alt=""> Gebruiksgemak',
+									'informatieveiligheid' => '<img src="' . plugin_dir_url( __FILE__ ).'images/informatieveiligheid.jpg" alt=""> informatieveiligheid',
+									'procesaanpak' => '<img src="' . plugin_dir_url( __FILE__ ).'images/procesaanpak.jpg" alt=""> procesaanpak',
+									'kanaalsturing' => '<img src="' . plugin_dir_url( __FILE__ ).'images/kannibaalsturing.jpg" alt=""> kanaalsturing',
+									'samenwerking' => '<img src="' . plugin_dir_url( __FILE__ ).'images/samenwerking.jpg" alt=""> samenwerking',
+									'commitment' => '<img src="' . plugin_dir_url( __FILE__ ).'images/commitment.jpg" alt=""> commitment',
+									'inclusie' => '<img src="' . plugin_dir_url( __FILE__ ).'images/inclusie.jpg" alt=""> inclusie',
+								),
+								'allow_null' => 0,
+								'other_choice' => 0,
+								'default_value' => '',
+								'layout' => 'vertical',
+								'return_format' => 'value',
+								'save_other_choice' => 0,
+							),
+						),
+						'location' => array(
+							array(
+								array(
+									'param' => 'taxonomy',
+									'operator' => '==',
+									'value' => 'tipthema',
+								),
+							),
+						),
+						'menu_order' => 0,
+						'position' => 'normal',
+						'style' => 'default',
+						'label_placement' => 'top',
+						'instruction_placement' => 'label',
+						'hide_on_screen' => '',
+						'active' => true,
+						'description' => '',
+					));
+
+
 			endif;
 
 			// ---------------------------------------------------------------------------------------------------
