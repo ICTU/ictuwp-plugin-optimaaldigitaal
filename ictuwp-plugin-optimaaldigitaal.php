@@ -133,7 +133,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				"show_in_rest"        => true,
 				"capability_type"     => __( "post", "ictuwp-plugin-optimaaldigitaal" ),
 				"supports"            => array( "title", "editor", "excerpt", "revisions", "author" ),
-				"has_archive"         => true,
+				"has_archive"         => false,
 				"rewrite"             => array( "slug" => GC_TIP_CPT, "with_front" => true ),
 				"can_export"          => true,
 				"delete_with_user"    => false,
