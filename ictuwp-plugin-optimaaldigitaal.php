@@ -1651,61 +1651,112 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				) );
 
 
-					acf_add_local_field_group(array(
-						'key' => 'group_5ee25849d572e',
-						'title' => 'Kleur & icoon tipthema',
-						'fields' => array(
+				acf_add_local_field_group(array(
+					'key' => 'group_5ee25849d572e',
+					'title' => 'Kleur & icoon tipthema',
+					'fields' => array(
+						array(
+							'key' => 'field_5ee2591580057',
+							'label' => 'kleur en icoon tipthema',
+							'name' => 'kleur_en_icoon_tipthema',
+							'type' => 'radio',
+							'instructions' => '',
+							'required' => 1,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'choices' => array(
+								'gebruiksgemak' => '<img src="' . plugin_dir_url( __FILE__ ).'images/gebruiksgemak.jpg" alt=""> Gebruiksgemak',
+								'informatieveiligheid' => '<img src="' . plugin_dir_url( __FILE__ ).'images/informatieveiligheid.jpg" alt=""> informatieveiligheid',
+								'procesaanpak' => '<img src="' . plugin_dir_url( __FILE__ ).'images/procesaanpak.jpg" alt=""> procesaanpak',
+								'kanaalsturing' => '<img src="' . plugin_dir_url( __FILE__ ).'images/kannibaalsturing.jpg" alt=""> kanaalsturing',
+								'samenwerking' => '<img src="' . plugin_dir_url( __FILE__ ).'images/samenwerking.jpg" alt=""> samenwerking',
+								'commitment' => '<img src="' . plugin_dir_url( __FILE__ ).'images/commitment.jpg" alt=""> commitment',
+								'inclusie' => '<img src="' . plugin_dir_url( __FILE__ ).'images/inclusie.jpg" alt=""> inclusie',
+							),
+							'allow_null' => 0,
+							'other_choice' => 0,
+							'default_value' => '',
+							'layout' => 'vertical',
+							'return_format' => 'value',
+							'save_other_choice' => 0,
+						),
+					),
+					'location' => array(
+						array(
 							array(
-								'key' => 'field_5ee2591580057',
-								'label' => 'kleur en icoon tipthema',
-								'name' => 'kleur_en_icoon_tipthema',
-								'type' => 'radio',
-								'instructions' => '',
-								'required' => 1,
-								'conditional_logic' => 0,
-								'wrapper' => array(
-									'width' => '',
-									'class' => '',
-									'id' => '',
-								),
-								'choices' => array(
-									'gebruiksgemak' => '<img src="' . plugin_dir_url( __FILE__ ).'images/gebruiksgemak.jpg" alt=""> Gebruiksgemak',
-									'informatieveiligheid' => '<img src="' . plugin_dir_url( __FILE__ ).'images/informatieveiligheid.jpg" alt=""> informatieveiligheid',
-									'procesaanpak' => '<img src="' . plugin_dir_url( __FILE__ ).'images/procesaanpak.jpg" alt=""> procesaanpak',
-									'kanaalsturing' => '<img src="' . plugin_dir_url( __FILE__ ).'images/kannibaalsturing.jpg" alt=""> kanaalsturing',
-									'samenwerking' => '<img src="' . plugin_dir_url( __FILE__ ).'images/samenwerking.jpg" alt=""> samenwerking',
-									'commitment' => '<img src="' . plugin_dir_url( __FILE__ ).'images/commitment.jpg" alt=""> commitment',
-									'inclusie' => '<img src="' . plugin_dir_url( __FILE__ ).'images/inclusie.jpg" alt=""> inclusie',
-								),
-								'allow_null' => 0,
-								'other_choice' => 0,
-								'default_value' => '',
-								'layout' => 'vertical',
-								'return_format' => 'value',
-								'save_other_choice' => 0,
+								'param' => 'taxonomy',
+								'operator' => '==',
+								'value' => 'tipthema',
 							),
 						),
-						'location' => array(
-							array(
-								array(
-									'param' => 'taxonomy',
-									'operator' => '==',
-									'value' => 'tipthema',
-								),
-							),
-						),
-						'menu_order' => 0,
-						'position' => 'normal',
-						'style' => 'default',
-						'label_placement' => 'top',
-						'instruction_placement' => 'label',
-						'hide_on_screen' => '',
-						'active' => true,
-						'description' => '',
-					));
+					),
+					'menu_order' => 0,
+					'position' => 'normal',
+					'style' => 'default',
+					'label_placement' => 'top',
+					'instruction_placement' => 'label',
+					'hide_on_screen' => '',
+					'active' => true,
+					'description' => '',
+				));
 
 
 			endif;
+			
+			// Boolean voor is_toptip
+			acf_add_local_field_group(array(
+				'key' => 'group_5ef1f556c66d7',
+				'title' => 'Toptip',
+				'fields' => array(
+					array(
+						'key' => 'field_5ef1f56620cd9',
+						'label' => 'Is deze tip een toptip?',
+						'name' => 'is_toptip',
+						'type' => 'radio',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'choices' => array(
+							0 => 'Nee, dit is geen toptip',
+							1 => 'Ja, dit is een toptip',
+						),
+						'allow_null' => 0,
+						'other_choice' => 0,
+						'default_value' => 0,
+						'layout' => 'vertical',
+						'return_format' => 'value',
+						'save_other_choice' => 0,
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'tips',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'side',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => 'Is deze tip een toptip?',
+			));
+
+			
 
 			// ---------------------------------------------------------------------------------------------------
 			// clean up after ourselves
