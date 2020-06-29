@@ -103,7 +103,18 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 		 */
 		public function register_post_type_taxonomies() {
 
+
 			// ---------------------------------------------------------------------------------------------------
+			// uit siteopties de pagina ophalen die het overzicht is van alle links
+			$optionpage = get_field( 'od_overzicht_alle_tips', 'option' );
+			$defaultslugforCPT = GC_TIP_CPT;
+	
+			if ( $optionpage ) {
+				$defaultslugforCPT = get_the_permalink( $optionpage );
+				$defaultslugforCPT = str_replace( home_url(), '', $defaultslugforCPT ); 
+				$defaultslugforCPT = trim( $defaultslugforCPT, '/');
+			}
+			
 			$labels = array(
 				"name"               => __( "Tips", "ictuwp-plugin-optimaaldigitaal" ),
 				"singular_name"      => __( "Tip", "ictuwp-plugin-optimaaldigitaal" ),
@@ -134,7 +145,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				"capability_type"     => __( "post", "ictuwp-plugin-optimaaldigitaal" ),
 				"supports"            => array( "title", "editor", "excerpt", "revisions", "author" ),
 				"has_archive"         => false,
-				"rewrite"             => array( "slug" => GC_TIP_CPT, "with_front" => true ),
+				"rewrite"             => array( "slug" => $defaultslugforCPT, "with_front" => true ),
 				"can_export"          => true,
 				"delete_with_user"    => false,
 				"map_meta_cap"        => true,
@@ -1272,6 +1283,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 
 				acf_add_options_page( $args );
 
+/*
 
 				acf_add_local_field_group( array(
 					'key'                   => 'group_56b268032bdb7',
@@ -1585,6 +1597,7 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 					'active'                => 1,
 					'description'           => '',
 				) );
+	*/
 
 
 				acf_add_local_field_group( array(
@@ -1756,7 +1769,53 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 				'description' => 'Is deze tip een toptip?',
 			));
 
-			
+			///-----
+			// parent voor tips; deze pagina fungeert als de archive page voor tips
+			acf_add_local_field_group(array(
+				'key' => 'group_5ee7a4a0c9dfd',
+				'title' => '[OD] Overzichtspagina voor tips',
+				'fields' => array(
+					array(
+						'key' => 'field_5ee7a4b0f1054',
+						'label' => 'Op welke pagina staat het overzicht van alle tips?',
+						'name' => 'od_overzicht_alle_tips',
+						'type' => 'post_object',
+						'instructions' => "",
+						'required' => 1,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'post_type' => array(
+							0 => 'page',
+						),
+						'taxonomy' => '',
+						'allow_null' => 0,
+						'multiple' => 0,
+						'return_format' => 'object',
+						'ui' => 1,
+					),
+				),
+				'location' => array(
+					array(
+						array(
+							'param' => 'options_page',
+							'operator' => '==',
+							'value' => 'instellingen',
+						),
+					),
+				),
+				'menu_order' => 0,
+				'position' => 'normal',
+				'style' => 'default',
+				'label_placement' => 'top',
+				'instruction_placement' => 'label',
+				'hide_on_screen' => '',
+				'active' => true,
+				'description' => '',
+			));
 
 			// ---------------------------------------------------------------------------------------------------
 			// clean up after ourselves
@@ -1768,6 +1827,100 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 	}
 
 endif;
+
+//========================================================================================================
+
+/*
+ * filter for breadcrumb
+ */
+add_filter( 'wpseo_breadcrumb_links', 'ICTUWP_GC_OD_update_yoast_breadcrumb' );
+
+function ICTUWP_GC_OD_update_yoast_breadcrumb( $links ) {
+	global $post;
+
+	if ( is_home() || is_front_page() ) {
+		// geen breadcrumb op de homepage
+		return array();
+	} elseif ( is_singular( GC_TIP_CPT ) ) {
+		// uit siteopties de pagina ophalen die het overzicht is van alle links
+		$optionpage = get_field( 'od_overzicht_alle_tips', 'option' );
+
+		if ( $optionpage ) {
+			// haal de ancestors op voor de huidige pagina
+
+			$ancestors  = get_post_ancestors( $optionpage );
+			$currenttip = array_pop( $links );
+			$home       = $links[0];
+			$parents[]  = [
+				'url'  => get_page_link( $optionpage ),
+				'text' => get_the_title( $optionpage ),
+			];
+
+			// haal de hele keten aan ancestors op en zet ze in de returnstring
+			foreach ( $ancestors as $ancestorid ) {
+
+				if ( $home['url'] !== get_page_link( $ancestorid ) ) {
+					// home link staat al in $home, dus niet extra toevoegen
+
+					array_unshift( $parents, [
+						'url'  => get_page_link( $ancestorid ),
+						'text' => get_the_title( $ancestorid ),
+					] );
+
+				}
+			}
+
+			array_unshift( $parents, $links[0] );
+
+			$parents[] = [
+				'url'  => get_page_link( $currenttip['id'] ),
+				'text' => get_the_title( $currenttip['id'] ),
+			];
+
+			$links = $parents;
+		}
+	}
+
+	return $links;
+}
+
+//========================================================================================================
+
+function ICTUWP_OD_change_tip_permalinks( $value, $post_id, $field ) {
+
+	if ( $value ) {
+		
+		$asf = get_the_title( $value );
+		$permalink = get_the_permalink( $value );
+		$permalink = str_replace( home_url(), '', $permalink ); 
+		$permalink = trim( $permalink, '/');
+
+		if ( $permalink ) {
+
+			$args = array(
+				"rewrite"             => array( "slug" => $permalink, "with_front" => true ),
+			);
+			
+			register_post_type( GC_TIP_CPT, $args );
+			
+			// ---------------------------------------------------------------------------------------------------
+			// clean up after ourselves
+			flush_rewrite_rules();
+
+			if ( WP_DEBUG ) {
+
+				// note in log
+				error_log( 'ICTUWP_OD_change_tip_permalinks: slug for ' . GC_TIP_CPT . " changed to " . $permalink );
+				
+			}
+		}
+	}
+    
+    return $value;
+}
+
+// Apply to field named "od_overzicht_alle_tips".
+add_filter('acf/update_value/name=od_overzicht_alle_tips', 'ICTUWP_OD_change_tip_permalinks', 10, 3);
 
 //========================================================================================================
 
