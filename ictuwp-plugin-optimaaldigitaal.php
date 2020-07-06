@@ -48,10 +48,9 @@ if ( ! defined( 'GC_TIPTHEMA' ) ) {
 if ( ! defined( 'GC_TIPVRAAG' ) ) {
 	define( 'GC_TIPVRAAG', 'tipvraag' );
 }
-// Jouw Organisatie wordt niet meer gebruikt
-//	if ( ! defined( 'GC_TIPORGANISATIE' ) ) {
-//		define( 'GC_TIPORGANISATIE', 'tiporganisatie' );
-//	}
+if ( ! defined( 'GC_ODSPEELSET' ) ) {
+	define( 'GC_ODSPEELSET', 'speelset' );
+}
 if ( ! defined( 'OD_CITAATAUTEUR' ) ) {
 	define( 'OD_CITAATAUTEUR', 'tipgever' );
 }
@@ -260,6 +259,51 @@ if ( ! class_exists( 'ICTUWP_GC_OD_registerposttypes' ) ) :
 			);
 
 			register_taxonomy( OD_CITAATAUTEUR, array( GC_TIP_CPT ), $args );
+
+
+			//------------------------------------------------------------------------------------------------------
+
+			$labels = array(
+				"name"          => __( "Speelsets", "ictuwp-plugin-optimaaldigitaal" ),
+				"singular_name" => __( "Speelset", "ictuwp-plugin-optimaaldigitaal" ),
+			);
+
+			$labels = array(
+				"name"                  => __( "Speelsets", "ictuwp-plugin-optimaaldigitaal" ),
+				"singular_name"         => __( "Speelset", "ictuwp-plugin-optimaaldigitaal" ),
+				"menu_name"             => __( "Speelsets", "ictuwp-plugin-optimaaldigitaal" ),
+				"all_items"             => __( "Alle speelsets", "ictuwp-plugin-optimaaldigitaal" ),
+				"add_new"               => __( "Nieuwe speelset toevoegen", "ictuwp-plugin-optimaaldigitaal" ),
+				"add_new_item"          => __( "Voeg nieuwe speelset toe", "ictuwp-plugin-optimaaldigitaal" ),
+				"edit_item"             => __( "Bewerk speelset", "ictuwp-plugin-optimaaldigitaal" ),
+				"new_item"              => __( "Nieuwe speelset", "ictuwp-plugin-optimaaldigitaal" ),
+				"view_item"             => __( "Bekijk speelset", "ictuwp-plugin-optimaaldigitaal" ),
+				"search_items"          => __( "Zoek speelset", "ictuwp-plugin-optimaaldigitaal" ),
+				"not_found"             => __( "Geen speelset gevonden", "ictuwp-plugin-optimaaldigitaal" ),
+				"not_found_in_trash"    => __( "Geen speelset gevonden in de prullenbak", "ictuwp-plugin-optimaaldigitaal" ),
+				"featured_image"        => __( "Uitgelichte afbeelding", "ictuwp-plugin-optimaaldigitaal" ),
+				"archives"              => __( "Overzichten", "ictuwp-plugin-optimaaldigitaal" ),
+				"uploaded_to_this_item" => __( "Bijbehorende bestanden", "ictuwp-plugin-optimaaldigitaal" ),
+			);
+
+			$args = array(
+				"label"              => __( "Speelsets", "ictuwp-plugin-optimaaldigitaal" ),
+				"labels"             => $labels,
+				"public"             => true,
+				"hierarchical"       => true,
+				"label"              => __( "Speelsets", "ictuwp-plugin-optimaaldigitaal" ),
+				"show_ui"            => true,
+				"show_in_menu"       => true,
+				"show_in_nav_menus"  => true,
+				"query_var"          => true,
+				'show_in_rest'      => true, // Needed for tax to appear in Gutenberg editor.
+				"rewrite"            => array( 'slug' => GC_ODSPEELSET, 'with_front' => true, ),
+				"show_admin_column"  => false,
+				"rest_base"          => "",
+				"show_in_quick_edit" => false,
+			);
+
+			register_taxonomy( GC_ODSPEELSET, array( GC_TIP_CPT ), $args );
 
 			// ---------------------------------------------------------------------------------------------------
 
